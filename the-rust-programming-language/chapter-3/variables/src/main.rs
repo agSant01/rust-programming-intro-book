@@ -44,15 +44,15 @@ fn main() {
 
     let _tup: (i32, f64, u8) = (54, 65.0, 1);
     let tup = (54, 5.4, 43);
-    // tupple destructure
+    // tuple de-estructure
     let (_x, y, _z) = tup;
     println!("The value of y is: {}", y);
 
     let tup1st_val = tup.0;
     let tup2nd_val = tup.1;
 
-    println!("The tupple first value is: {}", tup1st_val);
-    println!("The tupple second value is: {}", tup2nd_val);
+    println!("The tuple first value is: {}", tup1st_val);
+    println!("The tuple second value is: {}", tup2nd_val);
 
     // Arrays
     let _arr = [1, 2, 3, 4, 4, 5, 67, 8];
