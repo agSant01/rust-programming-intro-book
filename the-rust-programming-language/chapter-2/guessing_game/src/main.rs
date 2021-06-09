@@ -5,7 +5,7 @@ use std::io;
 fn main() {
     println!("Guess the name!");
 
-    let secret_num = rand::thread_rng().gen_range(1, 101);
+    let secret_num = rand::thread_rng().gen_range(1..101);
 
     loop {
         println!("Please input you guess:");
