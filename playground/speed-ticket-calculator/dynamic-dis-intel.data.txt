@@ -1,0 +1,7 @@
+
+./target/release/speed-ticket-calculator:     file format elf64-x86-64
+
+Contents of section .rodata:
+ 0a60 48656c6c 6f2c2077 6f726c64 210a0000  Hello, world!...
+ 0a70 0a426967 5469636b 65745265 67756c61  .BigTicketRegula
+ 0a80 72546963 6b65744e 6f546963 6b6574    rTicketNoTicket 

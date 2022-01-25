@@ -1,0 +1,616 @@
+
+./target/debug/speed-ticket-calculator:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000000808 <_init>:
+ 808:	48 83 ec 08          	sub    rsp,0x8
+ 80c:	48 8b 05 a5 17 20 00 	mov    rax,QWORD PTR [rip+0x2017a5]        # 201fb8 <__gmon_start__>
+ 813:	48 85 c0             	test   rax,rax
+ 816:	74 02                	je     81a <_init+0x12>
+ 818:	ff d0                	call   rax
+ 81a:	48 83 c4 08          	add    rsp,0x8
+ 81e:	c3                   	ret    
+
+Disassembly of section .plt:
+
+0000000000000820 <.plt>:
+ 820:	ff 35 7a 17 20 00    	push   QWORD PTR [rip+0x20177a]        # 201fa0 <_GLOBAL_OFFSET_TABLE_+0x8>
+ 826:	ff 25 7c 17 20 00    	jmp    QWORD PTR [rip+0x20177c]        # 201fa8 <_GLOBAL_OFFSET_TABLE_+0x10>
+ 82c:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+
+0000000000000830 <_Unwind_Resume@plt>:
+ 830:	ff 25 7a 17 20 00    	jmp    QWORD PTR [rip+0x20177a]        # 201fb0 <_Unwind_Resume@GCC_3.0>
+ 836:	68 00 00 00 00       	push   0x0
+ 83b:	e9 e0 ff ff ff       	jmp    820 <.plt>
+
+Disassembly of section .plt.got:
+
+0000000000000840 <__cxa_finalize@plt>:
+ 840:	ff 25 92 17 20 00    	jmp    QWORD PTR [rip+0x201792]        # 201fd8 <__cxa_finalize@GLIBC_2.2.5>
+ 846:	66 90                	xchg   ax,ax
+
+Disassembly of section .text:
+
+0000000000000850 <_start>:
+     850:	31 ed                	xor    ebp,ebp
+     852:	49 89 d1             	mov    r9,rdx
+     855:	5e                   	pop    rsi
+     856:	48 89 e2             	mov    rdx,rsp
+     859:	48 83 e4 f0          	and    rsp,0xfffffffffffffff0
+     85d:	50                   	push   rax
+     85e:	54                   	push   rsp
+     85f:	4c 8d 05 ea 07 00 00 	lea    r8,[rip+0x7ea]        # 1050 <__libc_csu_fini>
+     866:	48 8d 0d 73 07 00 00 	lea    rcx,[rip+0x773]        # fe0 <__libc_csu_init>
+     86d:	48 8d 3d 5c 05 00 00 	lea    rdi,[rip+0x55c]        # dd0 <main>
+     874:	ff 15 46 17 20 00    	call   QWORD PTR [rip+0x201746]        # 201fc0 <__libc_start_main@GLIBC_2.2.5>
+     87a:	f4                   	hlt    
+     87b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+0000000000000880 <deregister_tm_clones>:
+     880:	48 8d 3d 89 17 20 00 	lea    rdi,[rip+0x201789]        # 202010 <__TMC_END__>
+     887:	55                   	push   rbp
+     888:	48 8d 05 81 17 20 00 	lea    rax,[rip+0x201781]        # 202010 <__TMC_END__>
+     88f:	48 39 f8             	cmp    rax,rdi
+     892:	48 89 e5             	mov    rbp,rsp
+     895:	74 19                	je     8b0 <deregister_tm_clones+0x30>
+     897:	48 8b 05 2a 17 20 00 	mov    rax,QWORD PTR [rip+0x20172a]        # 201fc8 <_ITM_deregisterTMCloneTable>
+     89e:	48 85 c0             	test   rax,rax
+     8a1:	74 0d                	je     8b0 <deregister_tm_clones+0x30>
+     8a3:	5d                   	pop    rbp
+     8a4:	ff e0                	jmp    rax
+     8a6:	66 2e 0f 1f 84 00 00 	nop    WORD PTR cs:[rax+rax*1+0x0]
+     8ad:	00 00 00 
+     8b0:	5d                   	pop    rbp
+     8b1:	c3                   	ret    
+     8b2:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+     8b6:	66 2e 0f 1f 84 00 00 	nop    WORD PTR cs:[rax+rax*1+0x0]
+     8bd:	00 00 00 
+
+00000000000008c0 <register_tm_clones>:
+     8c0:	48 8d 3d 49 17 20 00 	lea    rdi,[rip+0x201749]        # 202010 <__TMC_END__>
+     8c7:	48 8d 35 42 17 20 00 	lea    rsi,[rip+0x201742]        # 202010 <__TMC_END__>
+     8ce:	55                   	push   rbp
+     8cf:	48 29 fe             	sub    rsi,rdi
+     8d2:	48 89 e5             	mov    rbp,rsp
+     8d5:	48 c1 fe 03          	sar    rsi,0x3
+     8d9:	48 89 f0             	mov    rax,rsi
+     8dc:	48 c1 e8 3f          	shr    rax,0x3f
+     8e0:	48 01 c6             	add    rsi,rax
+     8e3:	48 d1 fe             	sar    rsi,1
+     8e6:	74 18                	je     900 <register_tm_clones+0x40>
+     8e8:	48 8b 05 e1 16 20 00 	mov    rax,QWORD PTR [rip+0x2016e1]        # 201fd0 <_ITM_registerTMCloneTable>
+     8ef:	48 85 c0             	test   rax,rax
+     8f2:	74 0c                	je     900 <register_tm_clones+0x40>
+     8f4:	5d                   	pop    rbp
+     8f5:	ff e0                	jmp    rax
+     8f7:	66 0f 1f 84 00 00 00 	nop    WORD PTR [rax+rax*1+0x0]
+     8fe:	00 00 
+     900:	5d                   	pop    rbp
+     901:	c3                   	ret    
+     902:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+     906:	66 2e 0f 1f 84 00 00 	nop    WORD PTR cs:[rax+rax*1+0x0]
+     90d:	00 00 00 
+
+0000000000000910 <__do_global_dtors_aux>:
+     910:	80 3d f9 16 20 00 00 	cmp    BYTE PTR [rip+0x2016f9],0x0        # 202010 <__TMC_END__>
+     917:	75 2f                	jne    948 <__do_global_dtors_aux+0x38>
+     919:	48 83 3d b7 16 20 00 	cmp    QWORD PTR [rip+0x2016b7],0x0        # 201fd8 <__cxa_finalize@GLIBC_2.2.5>
+     920:	00 
+     921:	55                   	push   rbp
+     922:	48 89 e5             	mov    rbp,rsp
+     925:	74 0c                	je     933 <__do_global_dtors_aux+0x23>
+     927:	48 8b 3d d2 16 20 00 	mov    rdi,QWORD PTR [rip+0x2016d2]        # 202000 <__dso_handle>
+     92e:	e8 0d ff ff ff       	call   840 <__cxa_finalize@plt>
+     933:	e8 48 ff ff ff       	call   880 <deregister_tm_clones>
+     938:	c6 05 d1 16 20 00 01 	mov    BYTE PTR [rip+0x2016d1],0x1        # 202010 <__TMC_END__>
+     93f:	5d                   	pop    rbp
+     940:	c3                   	ret    
+     941:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+     948:	f3 c3                	repz ret 
+     94a:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+
+0000000000000950 <frame_dummy>:
+     950:	55                   	push   rbp
+     951:	48 89 e5             	mov    rbp,rsp
+     954:	5d                   	pop    rbp
+     955:	e9 66 ff ff ff       	jmp    8c0 <register_tm_clones>
+     95a:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+
+0000000000000960 <_ZN4core3fmt9Arguments6new_v117hcd533a3ff9b03c15E>:
+     960:	48 83 ec 68          	sub    rsp,0x68
+     964:	4c 89 04 24          	mov    QWORD PTR [rsp],r8
+     968:	48 89 4c 24 08       	mov    QWORD PTR [rsp+0x8],rcx
+     96d:	48 89 54 24 10       	mov    QWORD PTR [rsp+0x10],rdx
+     972:	48 89 74 24 18       	mov    QWORD PTR [rsp+0x18],rsi
+     977:	48 89 7c 24 20       	mov    QWORD PTR [rsp+0x20],rdi
+     97c:	48 89 7c 24 28       	mov    QWORD PTR [rsp+0x28],rdi
+     981:	48 89 74 24 48       	mov    QWORD PTR [rsp+0x48],rsi
+     986:	48 89 54 24 50       	mov    QWORD PTR [rsp+0x50],rdx
+     98b:	48 89 4c 24 58       	mov    QWORD PTR [rsp+0x58],rcx
+     990:	4c 89 44 24 60       	mov    QWORD PTR [rsp+0x60],r8
+     995:	4c 39 c2             	cmp    rdx,r8
+     998:	72 1b                	jb     9b5 <_ZN4core3fmt9Arguments6new_v117hcd533a3ff9b03c15E+0x55>
+     99a:	48 8b 44 24 10       	mov    rax,QWORD PTR [rsp+0x10]
+     99f:	48 8b 0c 24          	mov    rcx,QWORD PTR [rsp]
+     9a3:	48 83 c1 01          	add    rcx,0x1
+     9a7:	48 39 c8             	cmp    rax,rcx
+     9aa:	0f 97 c0             	seta   al
+     9ad:	24 01                	and    al,0x1
+     9af:	88 44 24 37          	mov    BYTE PTR [rsp+0x37],al
+     9b3:	eb 05                	jmp    9ba <_ZN4core3fmt9Arguments6new_v117hcd533a3ff9b03c15E+0x5a>
+     9b5:	c6 44 24 37 01       	mov    BYTE PTR [rsp+0x37],0x1
+     9ba:	f6 44 24 37 01       	test   BYTE PTR [rsp+0x37],0x1
+     9bf:	75 4c                	jne    a0d <_ZN4core3fmt9Arguments6new_v117hcd533a3ff9b03c15E+0xad>
+     9c1:	48 8b 44 24 28       	mov    rax,QWORD PTR [rsp+0x28]
+     9c6:	48 8b 4c 24 20       	mov    rcx,QWORD PTR [rsp+0x20]
+     9cb:	48 8b 14 24          	mov    rdx,QWORD PTR [rsp]
+     9cf:	48 8b 74 24 08       	mov    rsi,QWORD PTR [rsp+0x8]
+     9d4:	48 8b 7c 24 10       	mov    rdi,QWORD PTR [rsp+0x10]
+     9d9:	4c 8b 44 24 18       	mov    r8,QWORD PTR [rsp+0x18]
+     9de:	48 c7 44 24 38 00 00 	mov    QWORD PTR [rsp+0x38],0x0
+     9e5:	00 00 
+     9e7:	4c 89 01             	mov    QWORD PTR [rcx],r8
+     9ea:	48 89 79 08          	mov    QWORD PTR [rcx+0x8],rdi
+     9ee:	4c 8b 44 24 38       	mov    r8,QWORD PTR [rsp+0x38]
+     9f3:	48 8b 7c 24 40       	mov    rdi,QWORD PTR [rsp+0x40]
+     9f8:	4c 89 41 10          	mov    QWORD PTR [rcx+0x10],r8
+     9fc:	48 89 79 18          	mov    QWORD PTR [rcx+0x18],rdi
+     a00:	48 89 71 20          	mov    QWORD PTR [rcx+0x20],rsi
+     a04:	48 89 51 28          	mov    QWORD PTR [rcx+0x28],rdx
+     a08:	48 83 c4 68          	add    rsp,0x68
+     a0c:	c3                   	ret    
+     a0d:	48 8d 3d 4c 06 00 00 	lea    rdi,[rip+0x64c]        # 1060 <_fini+0xc>
+     a14:	48 8d 15 c5 12 20 00 	lea    rdx,[rip+0x2012c5]        # 201ce0 <__init_array_end+0x8>
+     a1b:	48 8b 05 c6 15 20 00 	mov    rax,QWORD PTR [rip+0x2015c6]        # 201fe8 <_ZN4core9panicking5panic17h0ba7146865b2f9d6E>
+     a22:	be 0c 00 00 00       	mov    esi,0xc
+     a27:	ff d0                	call   rax
+     a29:	0f 0b                	ud2    
+     a2b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+0000000000000a30 <_ZN3std3sys4unix7process14process_common8ExitCode6as_i3217h23cfe9b0a5d1af9cE>:
+     a30:	50                   	push   rax
+     a31:	48 89 3c 24          	mov    QWORD PTR [rsp],rdi
+     a35:	0f b6 07             	movzx  eax,BYTE PTR [rdi]
+     a38:	59                   	pop    rcx
+     a39:	c3                   	ret    
+     a3a:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+
+0000000000000a40 <_ZN4core4hint9black_box17hd22fb1c8bd0738a0E>:
+     a40:	50                   	push   rax
+     a41:	58                   	pop    rax
+     a42:	c3                   	ret    
+     a43:	66 2e 0f 1f 84 00 00 	nop    WORD PTR cs:[rax+rax*1+0x0]
+     a4a:	00 00 00 
+     a4d:	0f 1f 00             	nop    DWORD PTR [rax]
+
+0000000000000a50 <_ZN23speed_ticket_calculator15speeding_ticket17h0cd13fea5ae9e062E>:
+     a50:	48 83 ec 28          	sub    rsp,0x28
+     a54:	89 7c 24 14          	mov    DWORD PTR [rsp+0x14],edi
+     a58:	40 88 f0             	mov    al,sil
+     a5b:	89 7c 24 20          	mov    DWORD PTR [rsp+0x20],edi
+     a5f:	88 c1                	mov    cl,al
+     a61:	80 e1 01             	and    cl,0x1
+     a64:	88 4c 24 27          	mov    BYTE PTR [rsp+0x27],cl
+     a68:	a8 01                	test   al,0x1
+     a6a:	75 0a                	jne    a76 <_ZN23speed_ticket_calculator15speeding_ticket17h0cd13fea5ae9e062E+0x26>
+     a6c:	c7 44 24 1c 00 00 00 	mov    DWORD PTR [rsp+0x1c],0x0
+     a73:	00 
+     a74:	eb 08                	jmp    a7e <_ZN23speed_ticket_calculator15speeding_ticket17h0cd13fea5ae9e062E+0x2e>
+     a76:	c7 44 24 1c 05 00 00 	mov    DWORD PTR [rsp+0x1c],0x5
+     a7d:	00 
+     a7e:	8b 44 24 1c          	mov    eax,DWORD PTR [rsp+0x1c]
+     a82:	83 c0 50             	add    eax,0x50
+     a85:	89 44 24 10          	mov    DWORD PTR [rsp+0x10],eax
+     a89:	0f 90 c0             	seto   al
+     a8c:	a8 01                	test   al,0x1
+     a8e:	75 0e                	jne    a9e <_ZN23speed_ticket_calculator15speeding_ticket17h0cd13fea5ae9e062E+0x4e>
+     a90:	8b 44 24 14          	mov    eax,DWORD PTR [rsp+0x14]
+     a94:	8b 4c 24 10          	mov    ecx,DWORD PTR [rsp+0x10]
+     a98:	39 c8                	cmp    eax,ecx
+     a9a:	7f 34                	jg     ad0 <_ZN23speed_ticket_calculator15speeding_ticket17h0cd13fea5ae9e062E+0x80>
+     a9c:	eb 1e                	jmp    abc <_ZN23speed_ticket_calculator15speeding_ticket17h0cd13fea5ae9e062E+0x6c>
+     a9e:	48 8d 3d 2b 06 00 00 	lea    rdi,[rip+0x62b]        # 10d0 <str.0>
+     aa5:	48 8d 15 4c 12 20 00 	lea    rdx,[rip+0x20124c]        # 201cf8 <__init_array_end+0x20>
+     aac:	48 8b 05 35 15 20 00 	mov    rax,QWORD PTR [rip+0x201535]        # 201fe8 <_ZN4core9panicking5panic17h0ba7146865b2f9d6E>
+     ab3:	be 1c 00 00 00       	mov    esi,0x1c
+     ab8:	ff d0                	call   rax
+     aba:	0f 0b                	ud2    
+     abc:	8b 44 24 1c          	mov    eax,DWORD PTR [rsp+0x1c]
+     ac0:	83 c0 3c             	add    eax,0x3c
+     ac3:	89 44 24 0c          	mov    DWORD PTR [rsp+0xc],eax
+     ac7:	0f 90 c0             	seto   al
+     aca:	a8 01                	test   al,0x1
+     acc:	75 1e                	jne    aec <_ZN23speed_ticket_calculator15speeding_ticket17h0cd13fea5ae9e062E+0x9c>
+     ace:	eb 0e                	jmp    ade <_ZN23speed_ticket_calculator15speeding_ticket17h0cd13fea5ae9e062E+0x8e>
+     ad0:	c6 44 24 1b 02       	mov    BYTE PTR [rsp+0x1b],0x2
+     ad5:	8a 44 24 1b          	mov    al,BYTE PTR [rsp+0x1b]
+     ad9:	48 83 c4 28          	add    rsp,0x28
+     add:	c3                   	ret    
+     ade:	8b 44 24 14          	mov    eax,DWORD PTR [rsp+0x14]
+     ae2:	8b 4c 24 0c          	mov    ecx,DWORD PTR [rsp+0xc]
+     ae6:	39 c8                	cmp    eax,ecx
+     ae8:	7f 27                	jg     b11 <_ZN23speed_ticket_calculator15speeding_ticket17h0cd13fea5ae9e062E+0xc1>
+     aea:	eb 1e                	jmp    b0a <_ZN23speed_ticket_calculator15speeding_ticket17h0cd13fea5ae9e062E+0xba>
+     aec:	48 8d 3d dd 05 00 00 	lea    rdi,[rip+0x5dd]        # 10d0 <str.0>
+     af3:	48 8d 15 16 12 20 00 	lea    rdx,[rip+0x201216]        # 201d10 <__init_array_end+0x38>
+     afa:	48 8b 05 e7 14 20 00 	mov    rax,QWORD PTR [rip+0x2014e7]        # 201fe8 <_ZN4core9panicking5panic17h0ba7146865b2f9d6E>
+     b01:	be 1c 00 00 00       	mov    esi,0x1c
+     b06:	ff d0                	call   rax
+     b08:	0f 0b                	ud2    
+     b0a:	c6 44 24 1b 00       	mov    BYTE PTR [rsp+0x1b],0x0
+     b0f:	eb c4                	jmp    ad5 <_ZN23speed_ticket_calculator15speeding_ticket17h0cd13fea5ae9e062E+0x85>
+     b11:	c6 44 24 1b 01       	mov    BYTE PTR [rsp+0x1b],0x1
+     b16:	eb bd                	jmp    ad5 <_ZN23speed_ticket_calculator15speeding_ticket17h0cd13fea5ae9e062E+0x85>
+     b18:	0f 1f 84 00 00 00 00 	nop    DWORD PTR [rax+rax*1+0x0]
+     b1f:	00 
+
+0000000000000b20 <_ZN23speed_ticket_calculator4main17h3900b66fa9d7f000E>:
+     b20:	48 81 ec 68 01 00 00 	sub    rsp,0x168
+     b27:	48 8d 7c 24 30       	lea    rdi,[rsp+0x30]
+     b2c:	48 8d 35 f5 11 20 00 	lea    rsi,[rip+0x2011f5]        # 201d28 <__init_array_end+0x50>
+     b33:	ba 01 00 00 00       	mov    edx,0x1
+     b38:	48 8d 0d c1 05 00 00 	lea    rcx,[rip+0x5c1]        # 1100 <str.0+0x30>
+     b3f:	31 c0                	xor    eax,eax
+     b41:	41 89 c0             	mov    r8d,eax
+     b44:	e8 17 fe ff ff       	call   960 <_ZN4core3fmt9Arguments6new_v117hcd533a3ff9b03c15E>
+     b49:	48 8d 7c 24 30       	lea    rdi,[rsp+0x30]
+     b4e:	ff 15 a4 14 20 00    	call   QWORD PTR [rip+0x2014a4]        # 201ff8 <_ZN3std2io5stdio6_print17hd9c9dbd31aa97d70E>
+     b54:	bf 3c 00 00 00       	mov    edi,0x3c
+     b59:	31 f6                	xor    esi,esi
+     b5b:	e8 f0 fe ff ff       	call   a50 <_ZN23speed_ticket_calculator15speeding_ticket17h0cd13fea5ae9e062E>
+     b60:	88 44 24 67          	mov    BYTE PTR [rsp+0x67],al
+     b64:	48 8d 44 24 67       	lea    rax,[rsp+0x67]
+     b69:	48 89 84 24 a8 00 00 	mov    QWORD PTR [rsp+0xa8],rax
+     b70:	00 
+     b71:	48 8b bc 24 a8 00 00 	mov    rdi,QWORD PTR [rsp+0xa8]
+     b78:	00 
+     b79:	48 89 bc 24 50 01 00 	mov    QWORD PTR [rsp+0x150],rdi
+     b80:	00 
+     b81:	48 8d 35 98 01 00 00 	lea    rsi,[rip+0x198]        # d20 <_ZN76_$LT$speed_ticket_calculator..SpeedingTicket$u20$as$u20$core..fmt..Debug$GT$3fmt17h5ea77b81cf09e57dE>
+     b88:	e8 23 03 00 00       	call   eb0 <_ZN4core3fmt10ArgumentV13new17h1eeba7e49b9dd120E>
+     b8d:	48 89 44 24 20       	mov    QWORD PTR [rsp+0x20],rax
+     b92:	48 89 54 24 28       	mov    QWORD PTR [rsp+0x28],rdx
+     b97:	48 8b 44 24 28       	mov    rax,QWORD PTR [rsp+0x28]
+     b9c:	48 8b 4c 24 20       	mov    rcx,QWORD PTR [rsp+0x20]
+     ba1:	48 89 8c 24 98 00 00 	mov    QWORD PTR [rsp+0x98],rcx
+     ba8:	00 
+     ba9:	48 89 84 24 a0 00 00 	mov    QWORD PTR [rsp+0xa0],rax
+     bb0:	00 
+     bb1:	48 8d 8c 24 98 00 00 	lea    rcx,[rsp+0x98]
+     bb8:	00 
+     bb9:	48 8d 7c 24 68       	lea    rdi,[rsp+0x68]
+     bbe:	48 8d 35 73 11 20 00 	lea    rsi,[rip+0x201173]        # 201d38 <__init_array_end+0x60>
+     bc5:	ba 02 00 00 00       	mov    edx,0x2
+     bca:	41 b8 01 00 00 00    	mov    r8d,0x1
+     bd0:	e8 8b fd ff ff       	call   960 <_ZN4core3fmt9Arguments6new_v117hcd533a3ff9b03c15E>
+     bd5:	48 8d 7c 24 68       	lea    rdi,[rsp+0x68]
+     bda:	ff 15 18 14 20 00    	call   QWORD PTR [rip+0x201418]        # 201ff8 <_ZN3std2io5stdio6_print17hd9c9dbd31aa97d70E>
+     be0:	bf 41 00 00 00       	mov    edi,0x41
+     be5:	31 f6                	xor    esi,esi
+     be7:	e8 64 fe ff ff       	call   a50 <_ZN23speed_ticket_calculator15speeding_ticket17h0cd13fea5ae9e062E>
+     bec:	88 84 24 b7 00 00 00 	mov    BYTE PTR [rsp+0xb7],al
+     bf3:	48 8d 84 24 b7 00 00 	lea    rax,[rsp+0xb7]
+     bfa:	00 
+     bfb:	48 89 84 24 f8 00 00 	mov    QWORD PTR [rsp+0xf8],rax
+     c02:	00 
+     c03:	48 8b bc 24 f8 00 00 	mov    rdi,QWORD PTR [rsp+0xf8]
+     c0a:	00 
+     c0b:	48 89 bc 24 58 01 00 	mov    QWORD PTR [rsp+0x158],rdi
+     c12:	00 
+     c13:	48 8d 35 06 01 00 00 	lea    rsi,[rip+0x106]        # d20 <_ZN76_$LT$speed_ticket_calculator..SpeedingTicket$u20$as$u20$core..fmt..Debug$GT$3fmt17h5ea77b81cf09e57dE>
+     c1a:	e8 91 02 00 00       	call   eb0 <_ZN4core3fmt10ArgumentV13new17h1eeba7e49b9dd120E>
+     c1f:	48 89 44 24 10       	mov    QWORD PTR [rsp+0x10],rax
+     c24:	48 89 54 24 18       	mov    QWORD PTR [rsp+0x18],rdx
+     c29:	48 8b 44 24 18       	mov    rax,QWORD PTR [rsp+0x18]
+     c2e:	48 8b 4c 24 10       	mov    rcx,QWORD PTR [rsp+0x10]
+     c33:	48 89 8c 24 e8 00 00 	mov    QWORD PTR [rsp+0xe8],rcx
+     c3a:	00 
+     c3b:	48 89 84 24 f0 00 00 	mov    QWORD PTR [rsp+0xf0],rax
+     c42:	00 
+     c43:	48 8d 8c 24 e8 00 00 	lea    rcx,[rsp+0xe8]
+     c4a:	00 
+     c4b:	48 8d bc 24 b8 00 00 	lea    rdi,[rsp+0xb8]
+     c52:	00 
+     c53:	48 8d 35 de 10 20 00 	lea    rsi,[rip+0x2010de]        # 201d38 <__init_array_end+0x60>
+     c5a:	ba 02 00 00 00       	mov    edx,0x2
+     c5f:	41 b8 01 00 00 00    	mov    r8d,0x1
+     c65:	e8 f6 fc ff ff       	call   960 <_ZN4core3fmt9Arguments6new_v117hcd533a3ff9b03c15E>
+     c6a:	48 8d bc 24 b8 00 00 	lea    rdi,[rsp+0xb8]
+     c71:	00 
+     c72:	ff 15 80 13 20 00    	call   QWORD PTR [rip+0x201380]        # 201ff8 <_ZN3std2io5stdio6_print17hd9c9dbd31aa97d70E>
+     c78:	bf 41 00 00 00       	mov    edi,0x41
+     c7d:	be 01 00 00 00       	mov    esi,0x1
+     c82:	e8 c9 fd ff ff       	call   a50 <_ZN23speed_ticket_calculator15speeding_ticket17h0cd13fea5ae9e062E>
+     c87:	88 84 24 07 01 00 00 	mov    BYTE PTR [rsp+0x107],al
+     c8e:	48 8d 84 24 07 01 00 	lea    rax,[rsp+0x107]
+     c95:	00 
+     c96:	48 89 84 24 48 01 00 	mov    QWORD PTR [rsp+0x148],rax
+     c9d:	00 
+     c9e:	48 8b bc 24 48 01 00 	mov    rdi,QWORD PTR [rsp+0x148]
+     ca5:	00 
+     ca6:	48 89 bc 24 60 01 00 	mov    QWORD PTR [rsp+0x160],rdi
+     cad:	00 
+     cae:	48 8d 35 6b 00 00 00 	lea    rsi,[rip+0x6b]        # d20 <_ZN76_$LT$speed_ticket_calculator..SpeedingTicket$u20$as$u20$core..fmt..Debug$GT$3fmt17h5ea77b81cf09e57dE>
+     cb5:	e8 f6 01 00 00       	call   eb0 <_ZN4core3fmt10ArgumentV13new17h1eeba7e49b9dd120E>
+     cba:	48 89 04 24          	mov    QWORD PTR [rsp],rax
+     cbe:	48 89 54 24 08       	mov    QWORD PTR [rsp+0x8],rdx
+     cc3:	48 8b 44 24 08       	mov    rax,QWORD PTR [rsp+0x8]
+     cc8:	48 8b 0c 24          	mov    rcx,QWORD PTR [rsp]
+     ccc:	48 89 8c 24 38 01 00 	mov    QWORD PTR [rsp+0x138],rcx
+     cd3:	00 
+     cd4:	48 89 84 24 40 01 00 	mov    QWORD PTR [rsp+0x140],rax
+     cdb:	00 
+     cdc:	48 8d 8c 24 38 01 00 	lea    rcx,[rsp+0x138]
+     ce3:	00 
+     ce4:	48 8d bc 24 08 01 00 	lea    rdi,[rsp+0x108]
+     ceb:	00 
+     cec:	48 8d 35 45 10 20 00 	lea    rsi,[rip+0x201045]        # 201d38 <__init_array_end+0x60>
+     cf3:	ba 02 00 00 00       	mov    edx,0x2
+     cf8:	41 b8 01 00 00 00    	mov    r8d,0x1
+     cfe:	e8 5d fc ff ff       	call   960 <_ZN4core3fmt9Arguments6new_v117hcd533a3ff9b03c15E>
+     d03:	48 8d bc 24 08 01 00 	lea    rdi,[rsp+0x108]
+     d0a:	00 
+     d0b:	ff 15 e7 12 20 00    	call   QWORD PTR [rip+0x2012e7]        # 201ff8 <_ZN3std2io5stdio6_print17hd9c9dbd31aa97d70E>
+     d11:	48 81 c4 68 01 00 00 	add    rsp,0x168
+     d18:	c3                   	ret    
+     d19:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+
+0000000000000d20 <_ZN76_$LT$speed_ticket_calculator..SpeedingTicket$u20$as$u20$core..fmt..Debug$GT$3fmt17h5ea77b81cf09e57dE>:
+     d20:	48 83 ec 38          	sub    rsp,0x38
+     d24:	48 89 74 24 08       	mov    QWORD PTR [rsp+0x8],rsi
+     d29:	48 89 7c 24 28       	mov    QWORD PTR [rsp+0x28],rdi
+     d2e:	48 89 74 24 30       	mov    QWORD PTR [rsp+0x30],rsi
+     d33:	48 89 7c 24 20       	mov    QWORD PTR [rsp+0x20],rdi
+     d38:	48 8b 44 24 20       	mov    rax,QWORD PTR [rsp+0x20]
+     d3d:	0f b6 00             	movzx  eax,BYTE PTR [rax]
+     d40:	48 89 44 24 10       	mov    QWORD PTR [rsp+0x10],rax
+     d45:	48 85 c0             	test   rax,rax
+     d48:	74 13                	je     d5d <_ZN76_$LT$speed_ticket_calculator..SpeedingTicket$u20$as$u20$core..fmt..Debug$GT$3fmt17h5ea77b81cf09e57dE+0x3d>
+     d4a:	eb 00                	jmp    d4c <_ZN76_$LT$speed_ticket_calculator..SpeedingTicket$u20$as$u20$core..fmt..Debug$GT$3fmt17h5ea77b81cf09e57dE+0x2c>
+     d4c:	48 8b 44 24 10       	mov    rax,QWORD PTR [rsp+0x10]
+     d51:	48 83 e8 01          	sub    rax,0x1
+     d55:	74 25                	je     d7c <_ZN76_$LT$speed_ticket_calculator..SpeedingTicket$u20$as$u20$core..fmt..Debug$GT$3fmt17h5ea77b81cf09e57dE+0x5c>
+     d57:	eb 00                	jmp    d59 <_ZN76_$LT$speed_ticket_calculator..SpeedingTicket$u20$as$u20$core..fmt..Debug$GT$3fmt17h5ea77b81cf09e57dE+0x39>
+     d59:	eb 40                	jmp    d9b <_ZN76_$LT$speed_ticket_calculator..SpeedingTicket$u20$as$u20$core..fmt..Debug$GT$3fmt17h5ea77b81cf09e57dE+0x7b>
+     d5b:	0f 0b                	ud2    
+     d5d:	48 8b 7c 24 08       	mov    rdi,QWORD PTR [rsp+0x8]
+     d62:	48 8d 35 ae 03 00 00 	lea    rsi,[rip+0x3ae]        # 1117 <str.0+0x47>
+     d69:	ba 08 00 00 00       	mov    edx,0x8
+     d6e:	ff 15 6c 12 20 00    	call   QWORD PTR [rip+0x20126c]        # 201fe0 <_ZN4core3fmt9Formatter9write_str17ha456cbd779c3b0f0E>
+     d74:	24 01                	and    al,0x1
+     d76:	88 44 24 1f          	mov    BYTE PTR [rsp+0x1f],al
+     d7a:	eb 3c                	jmp    db8 <_ZN76_$LT$speed_ticket_calculator..SpeedingTicket$u20$as$u20$core..fmt..Debug$GT$3fmt17h5ea77b81cf09e57dE+0x98>
+     d7c:	48 8b 7c 24 08       	mov    rdi,QWORD PTR [rsp+0x8]
+     d81:	48 8d 35 82 03 00 00 	lea    rsi,[rip+0x382]        # 110a <str.0+0x3a>
+     d88:	ba 0d 00 00 00       	mov    edx,0xd
+     d8d:	ff 15 4d 12 20 00    	call   QWORD PTR [rip+0x20124d]        # 201fe0 <_ZN4core3fmt9Formatter9write_str17ha456cbd779c3b0f0E>
+     d93:	24 01                	and    al,0x1
+     d95:	88 44 24 1f          	mov    BYTE PTR [rsp+0x1f],al
+     d99:	eb 1d                	jmp    db8 <_ZN76_$LT$speed_ticket_calculator..SpeedingTicket$u20$as$u20$core..fmt..Debug$GT$3fmt17h5ea77b81cf09e57dE+0x98>
+     d9b:	48 8b 7c 24 08       	mov    rdi,QWORD PTR [rsp+0x8]
+     da0:	48 8d 35 5a 03 00 00 	lea    rsi,[rip+0x35a]        # 1101 <str.0+0x31>
+     da7:	ba 09 00 00 00       	mov    edx,0x9
+     dac:	ff 15 2e 12 20 00    	call   QWORD PTR [rip+0x20122e]        # 201fe0 <_ZN4core3fmt9Formatter9write_str17ha456cbd779c3b0f0E>
+     db2:	24 01                	and    al,0x1
+     db4:	88 44 24 1f          	mov    BYTE PTR [rsp+0x1f],al
+     db8:	8a 44 24 1f          	mov    al,BYTE PTR [rsp+0x1f]
+     dbc:	24 01                	and    al,0x1
+     dbe:	0f b6 c0             	movzx  eax,al
+     dc1:	48 83 c4 38          	add    rsp,0x38
+     dc5:	c3                   	ret    
+     dc6:	66 2e 0f 1f 84 00 00 	nop    WORD PTR cs:[rax+rax*1+0x0]
+     dcd:	00 00 00 
+
+0000000000000dd0 <main>:
+     dd0:	50                   	push   rax
+     dd1:	48 89 f2             	mov    rdx,rsi
+     dd4:	48 8d 05 44 03 00 00 	lea    rax,[rip+0x344]        # 111f <__rustc_debug_gdb_scripts_section__>
+     ddb:	8a 00                	mov    al,BYTE PTR [rax]
+     ddd:	48 63 f7             	movsxd rsi,edi
+     de0:	48 8d 3d 39 fd ff ff 	lea    rdi,[rip+0xfffffffffffffd39]        # b20 <_ZN23speed_ticket_calculator4main17h3900b66fa9d7f000E>
+     de7:	e8 44 00 00 00       	call   e30 <_ZN3std2rt10lang_start17h2a37cedf3d303c5fE>
+     dec:	59                   	pop    rcx
+     ded:	c3                   	ret    
+     dee:	66 90                	xchg   ax,ax
+
+0000000000000df0 <_ZN54_$LT$$LP$$RP$$u20$as$u20$std..process..Termination$GT$6report17h8164512e73d6e92cE>:
+     df0:	48 83 ec 18          	sub    rsp,0x18
+     df4:	31 ff                	xor    edi,edi
+     df6:	e8 15 00 00 00       	call   e10 <_ZN68_$LT$std..process..ExitCode$u20$as$u20$std..process..Termination$GT$6report17h330645a92404b97eE>
+     dfb:	89 44 24 0c          	mov    DWORD PTR [rsp+0xc],eax
+     dff:	8b 44 24 0c          	mov    eax,DWORD PTR [rsp+0xc]
+     e03:	48 83 c4 18          	add    rsp,0x18
+     e07:	c3                   	ret    
+     e08:	0f 1f 84 00 00 00 00 	nop    DWORD PTR [rax+rax*1+0x0]
+     e0f:	00 
+
+0000000000000e10 <_ZN68_$LT$std..process..ExitCode$u20$as$u20$std..process..Termination$GT$6report17h330645a92404b97eE>:
+     e10:	50                   	push   rax
+     e11:	40 88 f8             	mov    al,dil
+     e14:	88 44 24 07          	mov    BYTE PTR [rsp+0x7],al
+     e18:	48 8d 7c 24 07       	lea    rdi,[rsp+0x7]
+     e1d:	e8 0e fc ff ff       	call   a30 <_ZN3std3sys4unix7process14process_common8ExitCode6as_i3217h23cfe9b0a5d1af9cE>
+     e22:	89 04 24             	mov    DWORD PTR [rsp],eax
+     e25:	8b 04 24             	mov    eax,DWORD PTR [rsp]
+     e28:	59                   	pop    rcx
+     e29:	c3                   	ret    
+     e2a:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+
+0000000000000e30 <_ZN3std2rt10lang_start17h2a37cedf3d303c5fE>:
+     e30:	48 83 ec 38          	sub    rsp,0x38
+     e34:	48 89 d1             	mov    rcx,rdx
+     e37:	48 89 f2             	mov    rdx,rsi
+     e3a:	48 89 7c 24 18       	mov    QWORD PTR [rsp+0x18],rdi
+     e3f:	48 89 54 24 20       	mov    QWORD PTR [rsp+0x20],rdx
+     e44:	48 89 4c 24 28       	mov    QWORD PTR [rsp+0x28],rcx
+     e49:	48 89 7c 24 10       	mov    QWORD PTR [rsp+0x10],rdi
+     e4e:	48 8d 7c 24 10       	lea    rdi,[rsp+0x10]
+     e53:	48 8d 35 fe 0e 20 00 	lea    rsi,[rip+0x200efe]        # 201d58 <__init_array_end+0x80>
+     e5a:	ff 15 90 11 20 00    	call   QWORD PTR [rip+0x201190]        # 201ff0 <_ZN3std2rt19lang_start_internal17hd15a47be08101c28E>
+     e60:	48 89 44 24 08       	mov    QWORD PTR [rsp+0x8],rax
+     e65:	48 8b 44 24 08       	mov    rax,QWORD PTR [rsp+0x8]
+     e6a:	48 89 44 24 30       	mov    QWORD PTR [rsp+0x30],rax
+     e6f:	48 83 c4 38          	add    rsp,0x38
+     e73:	c3                   	ret    
+     e74:	66 2e 0f 1f 84 00 00 	nop    WORD PTR cs:[rax+rax*1+0x0]
+     e7b:	00 00 00 
+     e7e:	66 90                	xchg   ax,ax
+
+0000000000000e80 <_ZN3std2rt10lang_start28_$u7b$$u7b$closure$u7d$$u7d$17h3e1e31152675e98fE>:
+     e80:	48 83 ec 18          	sub    rsp,0x18
+     e84:	48 89 7c 24 10       	mov    QWORD PTR [rsp+0x10],rdi
+     e89:	48 8b 3f             	mov    rdi,QWORD PTR [rdi]
+     e8c:	e8 7f 00 00 00       	call   f10 <_ZN3std10sys_common9backtrace28__rust_begin_short_backtrace17h5b309ddab9dbb7e1E>
+     e91:	e8 5a ff ff ff       	call   df0 <_ZN54_$LT$$LP$$RP$$u20$as$u20$std..process..Termination$GT$6report17h8164512e73d6e92cE>
+     e96:	89 44 24 0c          	mov    DWORD PTR [rsp+0xc],eax
+     e9a:	8b 44 24 0c          	mov    eax,DWORD PTR [rsp+0xc]
+     e9e:	48 83 c4 18          	add    rsp,0x18
+     ea2:	c3                   	ret    
+     ea3:	66 2e 0f 1f 84 00 00 	nop    WORD PTR cs:[rax+rax*1+0x0]
+     eaa:	00 00 00 
+     ead:	0f 1f 00             	nop    DWORD PTR [rax]
+
+0000000000000eb0 <_ZN4core3fmt10ArgumentV13new17h1eeba7e49b9dd120E>:
+     eb0:	48 83 ec 48          	sub    rsp,0x48
+     eb4:	48 89 7c 24 08       	mov    QWORD PTR [rsp+0x8],rdi
+     eb9:	48 89 7c 24 28       	mov    QWORD PTR [rsp+0x28],rdi
+     ebe:	48 89 74 24 30       	mov    QWORD PTR [rsp+0x30],rsi
+     ec3:	48 89 74 24 38       	mov    QWORD PTR [rsp+0x38],rsi
+     ec8:	48 8b 44 24 38       	mov    rax,QWORD PTR [rsp+0x38]
+     ecd:	48 89 44 24 10       	mov    QWORD PTR [rsp+0x10],rax
+     ed2:	48 8b 44 24 08       	mov    rax,QWORD PTR [rsp+0x8]
+     ed7:	48 89 44 24 40       	mov    QWORD PTR [rsp+0x40],rax
+     edc:	48 8b 44 24 40       	mov    rax,QWORD PTR [rsp+0x40]
+     ee1:	48 89 04 24          	mov    QWORD PTR [rsp],rax
+     ee5:	48 8b 44 24 10       	mov    rax,QWORD PTR [rsp+0x10]
+     eea:	48 8b 0c 24          	mov    rcx,QWORD PTR [rsp]
+     eee:	48 89 4c 24 18       	mov    QWORD PTR [rsp+0x18],rcx
+     ef3:	48 89 44 24 20       	mov    QWORD PTR [rsp+0x20],rax
+     ef8:	48 8b 44 24 18       	mov    rax,QWORD PTR [rsp+0x18]
+     efd:	48 8b 54 24 20       	mov    rdx,QWORD PTR [rsp+0x20]
+     f02:	48 83 c4 48          	add    rsp,0x48
+     f06:	c3                   	ret    
+     f07:	66 0f 1f 84 00 00 00 	nop    WORD PTR [rax+rax*1+0x0]
+     f0e:	00 00 
+
+0000000000000f10 <_ZN3std10sys_common9backtrace28__rust_begin_short_backtrace17h5b309ddab9dbb7e1E>:
+     f10:	48 83 ec 28          	sub    rsp,0x28
+     f14:	48 89 7c 24 10       	mov    QWORD PTR [rsp+0x10],rdi
+     f19:	e8 a2 00 00 00       	call   fc0 <_ZN4core3ops8function6FnOnce9call_once17hf5e24301b3baa591E>
+     f1e:	e8 1d fb ff ff       	call   a40 <_ZN4core4hint9black_box17hd22fb1c8bd0738a0E>
+     f23:	eb 00                	jmp    f25 <_ZN3std10sys_common9backtrace28__rust_begin_short_backtrace17h5b309ddab9dbb7e1E+0x15>
+     f25:	48 83 c4 28          	add    rsp,0x28
+     f29:	c3                   	ret    
+     f2a:	eb 10                	jmp    f3c <_ZN3std10sys_common9backtrace28__rust_begin_short_backtrace17h5b309ddab9dbb7e1E+0x2c>
+     f2c:	48 89 c1             	mov    rcx,rax
+     f2f:	89 d0                	mov    eax,edx
+     f31:	48 89 4c 24 18       	mov    QWORD PTR [rsp+0x18],rcx
+     f36:	89 44 24 20          	mov    DWORD PTR [rsp+0x20],eax
+     f3a:	eb ee                	jmp    f2a <_ZN3std10sys_common9backtrace28__rust_begin_short_backtrace17h5b309ddab9dbb7e1E+0x1a>
+     f3c:	48 8b 7c 24 18       	mov    rdi,QWORD PTR [rsp+0x18]
+     f41:	e8 ea f8 ff ff       	call   830 <_Unwind_Resume@plt>
+     f46:	0f 0b                	ud2    
+     f48:	0f 1f 84 00 00 00 00 	nop    DWORD PTR [rax+rax*1+0x0]
+     f4f:	00 
+
+0000000000000f50 <_ZN4core3ops8function6FnOnce40call_once$u7b$$u7b$vtable.shim$u7d$$u7d$17h2063fe74feed39e3E>:
+     f50:	48 83 ec 18          	sub    rsp,0x18
+     f54:	48 89 7c 24 10       	mov    QWORD PTR [rsp+0x10],rdi
+     f59:	48 8b 3f             	mov    rdi,QWORD PTR [rdi]
+     f5c:	e8 0f 00 00 00       	call   f70 <_ZN4core3ops8function6FnOnce9call_once17h16bfbc9a32a7d779E>
+     f61:	89 44 24 04          	mov    DWORD PTR [rsp+0x4],eax
+     f65:	8b 44 24 04          	mov    eax,DWORD PTR [rsp+0x4]
+     f69:	48 83 c4 18          	add    rsp,0x18
+     f6d:	c3                   	ret    
+     f6e:	66 90                	xchg   ax,ax
+
+0000000000000f70 <_ZN4core3ops8function6FnOnce9call_once17h16bfbc9a32a7d779E>:
+     f70:	48 83 ec 28          	sub    rsp,0x28
+     f74:	48 89 7c 24 08       	mov    QWORD PTR [rsp+0x8],rdi
+     f79:	48 8d 7c 24 08       	lea    rdi,[rsp+0x8]
+     f7e:	e8 fd fe ff ff       	call   e80 <_ZN3std2rt10lang_start28_$u7b$$u7b$closure$u7d$$u7d$17h3e1e31152675e98fE>
+     f83:	89 44 24 04          	mov    DWORD PTR [rsp+0x4],eax
+     f87:	eb 00                	jmp    f89 <_ZN4core3ops8function6FnOnce9call_once17h16bfbc9a32a7d779E+0x19>
+     f89:	eb 1e                	jmp    fa9 <_ZN4core3ops8function6FnOnce9call_once17h16bfbc9a32a7d779E+0x39>
+     f8b:	eb 10                	jmp    f9d <_ZN4core3ops8function6FnOnce9call_once17h16bfbc9a32a7d779E+0x2d>
+     f8d:	48 89 c1             	mov    rcx,rax
+     f90:	89 d0                	mov    eax,edx
+     f92:	48 89 4c 24 18       	mov    QWORD PTR [rsp+0x18],rcx
+     f97:	89 44 24 20          	mov    DWORD PTR [rsp+0x20],eax
+     f9b:	eb ee                	jmp    f8b <_ZN4core3ops8function6FnOnce9call_once17h16bfbc9a32a7d779E+0x1b>
+     f9d:	48 8b 7c 24 18       	mov    rdi,QWORD PTR [rsp+0x18]
+     fa2:	e8 89 f8 ff ff       	call   830 <_Unwind_Resume@plt>
+     fa7:	0f 0b                	ud2    
+     fa9:	8b 44 24 04          	mov    eax,DWORD PTR [rsp+0x4]
+     fad:	48 83 c4 28          	add    rsp,0x28
+     fb1:	c3                   	ret    
+     fb2:	66 2e 0f 1f 84 00 00 	nop    WORD PTR cs:[rax+rax*1+0x0]
+     fb9:	00 00 00 
+     fbc:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+
+0000000000000fc0 <_ZN4core3ops8function6FnOnce9call_once17hf5e24301b3baa591E>:
+     fc0:	48 83 ec 18          	sub    rsp,0x18
+     fc4:	48 89 7c 24 10       	mov    QWORD PTR [rsp+0x10],rdi
+     fc9:	ff d7                	call   rdi
+     fcb:	48 83 c4 18          	add    rsp,0x18
+     fcf:	c3                   	ret    
+
+0000000000000fd0 <_ZN4core3ptr85drop_in_place$LT$std..rt..lang_start$LT$$LP$$RP$$GT$..$u7b$$u7b$closure$u7d$$u7d$$GT$17h867ece48dfa89fb2E>:
+     fd0:	50                   	push   rax
+     fd1:	48 89 3c 24          	mov    QWORD PTR [rsp],rdi
+     fd5:	58                   	pop    rax
+     fd6:	c3                   	ret    
+     fd7:	66 0f 1f 84 00 00 00 	nop    WORD PTR [rax+rax*1+0x0]
+     fde:	00 00 
+
+0000000000000fe0 <__libc_csu_init>:
+     fe0:	41 57                	push   r15
+     fe2:	41 56                	push   r14
+     fe4:	49 89 d7             	mov    r15,rdx
+     fe7:	41 55                	push   r13
+     fe9:	41 54                	push   r12
+     feb:	4c 8d 25 de 0c 20 00 	lea    r12,[rip+0x200cde]        # 201cd0 <__frame_dummy_init_array_entry>
+     ff2:	55                   	push   rbp
+     ff3:	48 8d 2d de 0c 20 00 	lea    rbp,[rip+0x200cde]        # 201cd8 <__init_array_end>
+     ffa:	53                   	push   rbx
+     ffb:	41 89 fd             	mov    r13d,edi
+     ffe:	49 89 f6             	mov    r14,rsi
+    1001:	4c 29 e5             	sub    rbp,r12
+    1004:	48 83 ec 08          	sub    rsp,0x8
+    1008:	48 c1 fd 03          	sar    rbp,0x3
+    100c:	e8 f7 f7 ff ff       	call   808 <_init>
+    1011:	48 85 ed             	test   rbp,rbp
+    1014:	74 20                	je     1036 <__libc_csu_init+0x56>
+    1016:	31 db                	xor    ebx,ebx
+    1018:	0f 1f 84 00 00 00 00 	nop    DWORD PTR [rax+rax*1+0x0]
+    101f:	00 
+    1020:	4c 89 fa             	mov    rdx,r15
+    1023:	4c 89 f6             	mov    rsi,r14
+    1026:	44 89 ef             	mov    edi,r13d
+    1029:	41 ff 14 dc          	call   QWORD PTR [r12+rbx*8]
+    102d:	48 83 c3 01          	add    rbx,0x1
+    1031:	48 39 dd             	cmp    rbp,rbx
+    1034:	75 ea                	jne    1020 <__libc_csu_init+0x40>
+    1036:	48 83 c4 08          	add    rsp,0x8
+    103a:	5b                   	pop    rbx
+    103b:	5d                   	pop    rbp
+    103c:	41 5c                	pop    r12
+    103e:	41 5d                	pop    r13
+    1040:	41 5e                	pop    r14
+    1042:	41 5f                	pop    r15
+    1044:	c3                   	ret    
+    1045:	90                   	nop
+    1046:	66 2e 0f 1f 84 00 00 	nop    WORD PTR cs:[rax+rax*1+0x0]
+    104d:	00 00 00 
+
+0000000000001050 <__libc_csu_fini>:
+    1050:	f3 c3                	repz ret 
+
+Disassembly of section .fini:
+
+0000000000001054 <_fini>:
+    1054:	48 83 ec 08          	sub    rsp,0x8
+    1058:	48 83 c4 08          	add    rsp,0x8
+    105c:	c3                   	ret    

@@ -1,0 +1,7 @@
+
+a.out:     file format elf64-x86-64
+
+Contents of section .rodata:
+ 07f0 01000200 3c000000 50000000 05000000  ....<...P.......
+ 0800 48656c6c 6f20776f 726c6421 0025640a  Hello world!.%d.
+ 0810 00                                   .               
